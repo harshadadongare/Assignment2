@@ -22,13 +22,13 @@ namespace Assignment2.Controllers
             string? message = null;
             if (files == null || files.Length == 0)
             {
-                message = "Please upload a valid Excel file";
+                message = "Please upload a valid file";
             }
 
             else
             {
-                string connectionstring = "DefaultEndpointsProtocol=https;AccountName=excelblobupload;AccountKey=tqpwKw+Nv+/fq/p+yHb+xUC6I5Qrhdxgz6cX6Z6ZnPpW7CgW9esvYriXmbWLBDXZ4VcsTuFnMq1m+AStLn7k4A==;EndpointSuffix=core.windows.net";
-                string blobContainerName = "excelblob";
+                string connectionstring = "DefaultEndpointsProtocol=https;AccountName=harshada123;AccountKey=aV1wW+VvDGQdMVGw6p7fOqYgLl1JdxS/POCiLdhKwhMYjy3CHGj7J4XsrjA5Q2ok0rPImcNmJfes+AStGA+Qsw==;EndpointSuffix=core.windows.net";
+                string blobContainerName = "assignment4";
                 BlobClient blobClient = new BlobClient(connectionString: connectionstring, blobContainerName: blobContainerName, blobName: files.FileName);
                 try
                 {
@@ -37,7 +37,7 @@ namespace Assignment2.Controllers
                 }
                 catch (Exception)
                 {
-                    message = "An Error occored, please try again later!";
+                    message = "An Error occured, please try again later!";
                 }
             }
             return Ok(message);
